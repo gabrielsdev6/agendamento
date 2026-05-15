@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item \"C:\\\\Users\\\\gilva\\\\Desktop\\\\Agendamento\\\\backend\\\\.gitignore\" -Force)",
+      "Bash(Out-Null)",
+      "Bash(n.env\" -Encoding utf8)",
+      "Bash(Set-Content \"C:\\\\Users\\\\gilva\\\\Desktop\\\\Agendamento\\\\backend\\\\.gitignore\" \"node_modules/`n.env\" -Encoding utf8)",
+      "PowerShell(psql --version 2>&1)"
+    ]
+  }
+}
