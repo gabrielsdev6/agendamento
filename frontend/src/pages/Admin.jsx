@@ -29,7 +29,14 @@ export default function Admin() {
 
   useEffect(() => {
     api.get('/services').then((r) => setServices(r.data));
-    api.get('/appointments/all').then((r) => setAppointments(r.data));
+
+    function fetchAppointments() {
+      api.get('/appointments/all').then((r) => setAppointments(r.data));
+    }
+
+    fetchAppointments();
+    const interval = setInterval(fetchAppointments, 10000);
+    return () => clearInterval(interval);
   }, []);
 
   async function handleSaveService(e) {

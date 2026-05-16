@@ -30,7 +30,14 @@ export default function Dashboard() {
 
   useEffect(() => {
     api.get('/services').then((r) => setServices(r.data));
-    api.get('/appointments/my').then((r) => setAppointments(r.data));
+
+    function fetchAppointments() {
+      api.get('/appointments/my').then((r) => setAppointments(r.data));
+    }
+
+    fetchAppointments();
+    const interval = setInterval(fetchAppointments, 10000);
+    return () => clearInterval(interval);
   }, []);
 
   async function handleBook(e) {
